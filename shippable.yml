@@ -2,7 +2,7 @@ language:
   - python
   
 runtime:
-  nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
+  nodePool: RC_default_pool_x86_64_U14
   
 # Version number
 python: 
@@ -12,7 +12,7 @@ python:
 build:
   ci: 
     - printenv
-    - sleep 2m
+   # - sleep 2m
    
 resources:
   - name: sample-param1 #jatin-params-in
@@ -38,7 +38,7 @@ jobs:
   - name: sample-runSh1
     type: runSh
     runtime:
-      nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
+      nodePool: RC_default_pool_x86_64_U16
     steps:
       - IN: sample-param1
       - OUT: sample-param2
@@ -48,7 +48,7 @@ jobs:
         - script: echo $foo
         - script: echo $SAMPLEPARAM1_PARAMS_FOO
         - script: shipctl get_resource_env sample-param2 "PARAMS_FOO"
-        - sleep 2m
+      #  - sleep 2m
      # - TASK:
      #   - script: shipctl get_resource_env sample-param1 "PARAMS_FOO"
      #   - script: printenv
