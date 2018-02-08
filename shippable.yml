@@ -2,7 +2,7 @@ language:
   - python
   
 runtime:
-  nodePool: RC_default_pool_x86_64_U14
+  nodePool: RC_default_pool_x86_64_U16
   
 # Version number
 python: 
