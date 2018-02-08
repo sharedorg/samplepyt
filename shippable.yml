@@ -2,7 +2,7 @@ language:
   - python
   
 runtime:
-  nodePool: sharecentos7
+  nodePool: aarch_64ubuntu16_04BYON
   
 # Version number
 python: 
@@ -38,7 +38,7 @@ jobs:
   - name: sample-runSh1
     type: runSh
     runtime:
-      nodePool: sharecentos7
+      nodePool: aarch_64ubuntu16_04BYON
     steps:
       - IN: sample-param1
       - OUT: sample-param2
