@@ -1,19 +1,25 @@
-language: 
-  - python
-  
+language: python
+
+# Version number
+python:
+  - 2.7
+
 runtime:
   nodePool: aarch_64ubuntu16_04BYON
-  
-# Version number
-python: 
-  - 2.7
-  - 3.5
-  
-build:
-  ci: 
-    - printenv 
-   # - sleep 2m
    
+build:
+  pre_ci_boot:
+    image_name: drydockaarch64/u16pyt
+    image_tag: master
+    pull: true
+    
+  ci:
+    - python -V
+    - docker ps
+    - docker build -t=test .
+    - docker images 
+    - printenv 
+    
 resources:
   - name: sample-param1 #jatin-params-in
     type: params
