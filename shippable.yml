@@ -16,7 +16,7 @@ build:
   ci:
     - python -V
     - docker ps
-    - docker build -t=test .
+   # - docker build -t=test .
     - docker images 
     - printenv 
     
